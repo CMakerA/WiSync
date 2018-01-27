@@ -7,7 +7,6 @@ from Color import *
 # <editor-fold desc="UI Helpers">
 # <editor-fold desc="Dimensions">
 class Vector2:
-
     def __init__(self, x: int, y: int = None):
         if y is not None:
             self.x = x
@@ -52,6 +51,9 @@ class Colors:
     transparent = Color(0, 0, 0, 0)
     red = Color(255, 0, 0)
     yellow = Color(255, 255, 0)
+    aqua_blue = rgba(85, 239, 196, 1.0)
+    salmon_red = rgba(255, 118, 117, 1.0)
+    background_gray = rgba(223, 230, 233, 1.0)
 
 
 class Style:
@@ -84,14 +86,28 @@ class Drawer:
 class UIElement:
     window = None
 
+    font_preferences = Font.futura_TEE_preferences
+
+    def __init__(self, position: Vector2, size: Vector2, style: Style):
+        self.position = position
+        self.size = size
+        self.style = style
+
+    def draw(self):
+        if self.window is not None:
+            Drawer.draw_rect(self.position, self.size, self.style.background_color, self.window)
+
+
+class InteractableUIElement(UIElement):
+    window = None
+
     justHovered = False
     justClicked = False
 
     def __init__(self, position: Vector2, idle_style: Style, hover_style: Style, click_style: Style,
                  size: Vector2 = None,
                  on_click=None, on_hover=None, on_leave=None):
-        self.size = size
-        self.position = position
+        super().__init__(position, size, idle_style)
 
         self.idle_style = idle_style
         self.hover_style = hover_style
@@ -130,19 +146,49 @@ class UIElement:
         return Zone(self.position, self.position + self.size)
 
 
-class Idlers:
+class Iders:
     btnIdler = Ider()
+    panelIder = Ider()
 
 
-class Button(UIElement):
-    __idle = Style(Colors.blue, Colors.black, Colors.transparent, 0, 30)
-    __hover = Style(Colors.red, Colors.black, Colors.transparent, 0, 30)
-    __click = Style(Colors.yellow, Colors.black, Colors.transparent, 0, 30)
+class Panel(UIElement):
+    def __init__(self, position: Vector2, size: Vector2, style: Style):
+        super().__init__(position, size, style)
 
-    __font_margin = 10
+        self.id = Iders.panelIder.add(self)
 
-    def __init__(self, text: Font, position: Vector2, size: Vector2 = None, on_click=None, on_hover=None,
+
+class HeaderPanel(Panel):
+    # left-right and top-bottom
+    __header_margins = Vector2(30, 20)
+
+    panel_style = Style(Colors.background_gray, Colors.white, Colors.transparent, 0, 0)
+    header_style = Style(Colors.salmon_red, Colors.white, Colors.transparent, 0, 0)
+
+    def __init__(self, position: Vector2, size: Vector2, header_text: str):
+        super().__init__(position, size, self.panel_style)
+
+        self.header_style = self.header_style
+        self.header_text = header_text
+        self.text = Font.create_text(header_text, self.font_preferences, 20, self.header_style.background_color.get())
+
+    def draw(self):
+        if self.window is not None:
+            height = len(self.header_text) + self.__header_margins.y
+            width = len(self.header_text) + self.__header_margins.x
+            Drawer.draw_rect(self.position, Vector2(width, height), self.style.background_color, self.window)
+
+
+class Button(InteractableUIElement):
+    __idle = Style(Color(255, 118, 117), Colors.transparent, Colors.transparent, 0, 30)
+    __hover = Style(Colors.red, Colors.transparent, Colors.transparent, 0, 30)
+    __click = Style(Colors.yellow, Colors.transparent, Colors.transparent, 0, 30)
+
+    __font_margin = 15
+
+    def __init__(self, btn_text: str, position: Vector2, size: Vector2 = None, on_click=None, on_hover=None,
                  on_leave=None):
+        text = Font.create_text(btn_text, self.font_preferences, 20, Colors.white.get())
         super().__init__(size, self.__idle, self.__hover, self.__click, position, on_click, on_hover, on_leave)
 
         if size is None:
@@ -151,9 +197,9 @@ class Button(UIElement):
 
         self.text = text
 
-        id = Idlers.btnIdler.add(self)
+        self.id = Iders.btnIdler.add(self)
 
-        print("Initialized Button with id " + id + ", in coordinates (" + str(position.x) + ", " + str(
+        print("Initialized Button with id " + self.id + ", in coordinates (" + str(position.x) + ", " + str(
             position.y) + "), with size(" + str(size.x) + ", " + str(size.y) + ")")
 
     def get_window(self):
@@ -176,7 +222,7 @@ class Window:
         pygame.display.set_caption(title)
         self.screen.fill(background.get())
 
-    def add(self, element: UIElement):
+    def add(self, element: InteractableUIElement):
         element.window = self.screen
         self.elements.append(element)
 
@@ -184,21 +230,21 @@ class Window:
         while self.running:
             mouse_pos = Vector2(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])
             for element in self.elements:
-                if element.point_over(mouse_pos):
-                    if pygame.mouse.get_pressed()[0]:
-                        if not element.justClicked:
-                            print("clicked btn")
-                            element.justClicked = True
-                            element.perform_click()
+                if isinstance(element, InteractableUIElement):
+                    if element.point_over(mouse_pos):
+                        if pygame.mouse.get_pressed()[0]:
+                            if not element.justClicked:
+                                element.justClicked = True
+                                element.perform_click()
+                        else:
+                            element.justClicked = False
+                            element.perform_hover()
+                            element.justHovered = True
                     else:
                         element.justClicked = False
-                        element.perform_hover()
-                        element.justHovered = True
-                else:
-                    element.justClicked = False
-                    if element.justHovered:
-                        element.justHovered = False
-                        element.perform_leave()
+                        if element.justHovered:
+                            element.justHovered = False
+                            element.perform_leave()
 
             for element in self.elements:
                 element.draw()

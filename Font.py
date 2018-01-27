@@ -43,3 +43,4 @@ def create_text(text, fonts, size, color):
 # text = create_text("Hello, World", ["Bizarre-Ass Font Sans Serif", "Papyrus", "Comic Sans MS"], 72, (0, 128, 0))
 
 openSans_preferences = ["OpenSans", "Comic Sans MS"]
+futura_TEE_preferences = ["FuturaTEE", "Comic Sans MS"]

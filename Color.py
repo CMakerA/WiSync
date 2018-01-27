@@ -14,8 +14,13 @@ class Color:
         else:
             return self.red, self.green, self.blue
 
-    @staticmethod
-    def hex_to_rgb(value: str) -> (int, int, int):
-        value = value.lstrip('#')
-        lv = len(value)
-        return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
+
+class rgb(Color):
+    def __init__(self, r: int, g: int, b: int):
+        super().__init__(r, g, b)
+
+
+class rgba(Color):
+    # The input alpha is a  value between 0 and 1
+    def __init__(self, r: int, g: int, b: int, a: float):
+        super().__init__(r, g, b, int(255*a))
