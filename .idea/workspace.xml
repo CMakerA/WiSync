@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="096ad879-083d-4273-839c-f614d5e4a4d6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Arnym.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/WiSync.iml" afterPath="$PROJECT_DIR$/.idea/WiSync.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Color.py" afterPath="$PROJECT_DIR$/Color.py" />
-      <change beforePath="$PROJECT_DIR$/Font.py" afterPath="$PROJECT_DIR$/Font.py" />
       <change beforePath="$PROJECT_DIR$/UI.py" afterPath="$PROJECT_DIR$/UI.py" />
       <change beforePath="$PROJECT_DIR$/WiSync.py" afterPath="$PROJECT_DIR$/WiSync.py" />
     </list>
@@ -20,24 +14,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WiSync.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WiSync.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WiSync.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="65" lean-forward="false" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+            <state relative-caret-position="187">
+              <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UI.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-690">
-              <caret line="59" column="73" lean-forward="false" selection-start-line="59" selection-start-column="73" selection-end-line="59" selection-end-column="73" />
+            <state relative-caret-position="261">
+              <caret line="278" column="41" lean-forward="false" selection-start-line="278" selection-start-column="41" selection-end-line="278" selection-end-column="41" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#2618#4000#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -81,8 +74,8 @@
         <option value="$PROJECT_DIR$/pygame/__init__.py" />
         <option value="$PROJECT_DIR$/Font.py" />
         <option value="$PROJECT_DIR$/Color.py" />
-        <option value="$PROJECT_DIR$/WiSync.py" />
         <option value="$PROJECT_DIR$/UI.py" />
+        <option value="$PROJECT_DIR$/WiSync.py" />
       </list>
     </option>
   </component>
@@ -230,7 +223,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -248,7 +243,6 @@
           <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#2618#4000#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -286,22 +280,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WiSync.py">
+    <entry file="file://$PROJECT_DIR$/UI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="65" lean-forward="false" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
-          <folding />
+        <state relative-caret-position="261">
+          <caret line="278" column="41" lean-forward="false" selection-start-line="278" selection-start-column="41" selection-end-line="278" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UI.py">
+    <entry file="file://$PROJECT_DIR$/WiSync.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <caret line="59" column="73" lean-forward="false" selection-start-line="59" selection-start-column="73" selection-end-line="59" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#2618#4000#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

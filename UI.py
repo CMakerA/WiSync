@@ -54,6 +54,7 @@ class Colors:
     aqua_blue = rgba(85, 239, 196, 1.0)
     salmon_red = rgba(255, 118, 117, 1.0)
     background_gray = rgba(223, 230, 233, 1.0)
+    dark_gray = rgba(45, 52, 54, 1.0)
 
 
 class Style:
@@ -93,9 +94,14 @@ class UIElement:
         self.size = size
         self.style = style
 
-    def draw(self):
+    def draw(self, starting_point: Vector2 = None):
         if self.window is not None:
-            Drawer.draw_rect(self.position, self.size, self.style.background_color, self.window)
+            if self.size is not None:
+                if starting_point is None:
+                    Drawer.draw_rect(self.position, self.size, self.style.background_color, self.window)
+                else:
+                    Drawer.draw_rect(starting_point + self.position, self.size, self.style.background_color,
+                                     self.window)
 
 
 class InteractableUIElement(UIElement):
@@ -137,10 +143,14 @@ class InteractableUIElement(UIElement):
     def point_over(self, point: Vector2) -> bool:
         return self.get_zone().is_in(point)
 
-    def draw(self):
+    def draw(self, starting_point: Vector2 = None):
         if self.window is not None:
             if self.size is not None:
-                Drawer.draw_rect(self.position, self.size, self.currentStyle.background_color, self.window)
+                if starting_point is None:
+                    Drawer.draw_rect(self.position, self.size, self.currentStyle.background_color, self.window)
+                else:
+                    Drawer.draw_rect(starting_point + self.position, self.size, self.currentStyle.background_color,
+                                     self.window)
 
     def get_zone(self):
         return Zone(self.position, self.position + self.size)
@@ -152,10 +162,20 @@ class Iders:
 
 
 class Panel(UIElement):
+    elements = []
+
     def __init__(self, position: Vector2, size: Vector2, style: Style):
         super().__init__(position, size, style)
 
         self.id = Iders.panelIder.add(self)
+
+    def add(self, element: UIElement):
+        self.elements.append(element)
+
+    def draw(self, starting_point: Vector2 = None):
+        super().draw()
+        for element in self.elements:
+            element.draw(self.position)
 
 
 class HeaderPanel(Panel):
@@ -168,15 +188,25 @@ class HeaderPanel(Panel):
     def __init__(self, position: Vector2, size: Vector2, header_text: str):
         super().__init__(position, size, self.panel_style)
 
+        self.header_size = Vector2(size.x, 23)
+
         self.header_style = self.header_style
         self.header_text = header_text
-        self.text = Font.create_text(header_text, self.font_preferences, 20, self.header_style.background_color.get())
+        self.text = Font.create_text(header_text, self.font_preferences, 20, self.header_style.text_color.get())
 
-    def draw(self):
+        self.midpoint = size.x / 2
+
+    def draw(self, starting_point: Vector2 = None):
         if self.window is not None:
-            height = len(self.header_text) + self.__header_margins.y
-            width = len(self.header_text) + self.__header_margins.x
-            Drawer.draw_rect(self.position, Vector2(width, height), self.style.background_color, self.window)
+            Drawer.draw_rect(self.position + Vector2(0, self.header_size.y), self.size,
+                             self.panel_style.background_color, self.window)
+            Drawer.draw_rect(self.position, self.header_size, self.header_style.background_color, self.window)
+            Drawer.draw_text(
+                self.position + Vector2(int(3 * (self.__header_margins.x / 4)), int(3 * (self.__header_margins.y / 4))),
+                self.text,
+                self.window)
+        for element in self.elements:
+            element.draw(self.position + Vector2(0, self.header_size.y))
 
 
 class Button(InteractableUIElement):
@@ -205,7 +235,7 @@ class Button(InteractableUIElement):
     def get_window(self):
         return self.window
 
-    def draw(self):
+    def draw(self, starting_point: Vector2 = None):
         super().draw()
         Drawer.draw_text(self.position + Vector2(int(self.__font_margin - (20 / 100 * self.__font_margin))), self.text,
                          self.window)
@@ -222,7 +252,7 @@ class Window:
         pygame.display.set_caption(title)
         self.screen.fill(background.get())
 
-    def add(self, element: InteractableUIElement):
+    def add(self, element: UIElement):
         element.window = self.screen
         self.elements.append(element)
 
