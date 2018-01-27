@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="096ad879-083d-4273-839c-f614d5e4a4d6" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Dimensions.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/UIElement.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/elements/Button.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/elements/HeaderPanel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/elements/Panel.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/style/Style.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Color.py" afterPath="$PROJECT_DIR$/style/Color.py" />
       <change beforePath="$PROJECT_DIR$/UI.py" afterPath="$PROJECT_DIR$/UI.py" />
       <change beforePath="$PROJECT_DIR$/WiSync.py" afterPath="$PROJECT_DIR$/WiSync.py" />
     </list>
@@ -17,9 +25,11 @@
       <file leaf-file-name="WiSync.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WiSync.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-              <folding />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -27,11 +37,77 @@
       <file leaf-file-name="UI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="278" column="41" lean-forward="false" selection-start-line="278" selection-start-column="41" selection-end-line="278" selection-end-column="41" />
+            <state relative-caret-position="901">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HeaderPanel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements/HeaderPanel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="18" column="80" lean-forward="false" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Panel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements/Panel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Button.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/elements/Button.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="499">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dimensions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dimensions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="102" lean-forward="false" selection-start-line="22" selection-start-column="102" selection-end-line="22" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UIElement.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UIElement.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1309">
+              <caret line="94" column="41" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#478#1157#0" expanded="false" />
+                <element signature="e#1019#1157#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Style.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style/Style.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="85" lean-forward="false" selection-start-line="16" selection-start-column="85" selection-end-line="16" selection-end-column="85" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,18 +115,18 @@
       <file leaf-file-name="Font.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Font.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="329">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Color.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Color.py">
+        <entry file="file://$PROJECT_DIR$/style/Color.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="49" lean-forward="true" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+            <state relative-caret-position="346">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,6 +150,13 @@
         <option value="$PROJECT_DIR$/pygame/__init__.py" />
         <option value="$PROJECT_DIR$/Font.py" />
         <option value="$PROJECT_DIR$/Color.py" />
+        <option value="$PROJECT_DIR$/Dimensions.py" />
+        <option value="$PROJECT_DIR$/UIElement.py" />
+        <option value="$PROJECT_DIR$/style/Style.py" />
+        <option value="$PROJECT_DIR$/style/Color.py" />
+        <option value="$PROJECT_DIR$/elements/Button.py" />
+        <option value="$PROJECT_DIR$/elements/Panel.py" />
+        <option value="$PROJECT_DIR$/elements/HeaderPanel.py" />
         <option value="$PROJECT_DIR$/UI.py" />
         <option value="$PROJECT_DIR$/WiSync.py" />
       </list>
@@ -103,14 +186,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="WiSync" type="b2602c69:ProjectViewProjectNode" />
               <item name="WiSync" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WiSync" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WiSync" type="462c0819:PsiDirectoryNode" />
+              <item name="elements" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WiSync" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WiSync" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -120,6 +213,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Arnym\Documents\GitHub\WiSync\style" />
+      <recent name="C:\Users\Arnym\Documents\GitHub\WiSync" />
+      <recent name="C:\Users\Arnym\Documents\GitHub\WiSync\styles" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -231,9 +331,47 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/WiSync.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4675">
+          <caret line="278" column="41" lean-forward="false" selection-start-line="278" selection-start-column="41" selection-end-line="278" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Font.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/Color.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="49" lean-forward="true" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WiSync.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -242,12 +380,12 @@
         <state relative-caret-position="2856">
           <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Color.py">
+    <entry file="file://$PROJECT_DIR$/style/Color.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -266,35 +404,91 @@
     <entry file="file://$PROJECT_DIR$/pygame/__init__.py" />
     <entry file="file://$PROJECT_DIR$/Font.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="329">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Color.py">
+    <entry file="file://$PROJECT_DIR$/style/Style.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="49" lean-forward="true" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+        <state relative-caret-position="272">
+          <caret line="16" column="85" lean-forward="false" selection-start-line="16" selection-start-column="85" selection-end-line="16" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/Color.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dimensions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="102" lean-forward="false" selection-start-line="22" selection-start-column="102" selection-end-line="22" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/Button.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UIElement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="94" column="41" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#478#1157#0" expanded="false" />
+            <element signature="e#1019#1157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/Panel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/elements/HeaderPanel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="80" lean-forward="false" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="278" column="41" lean-forward="false" selection-start-line="278" selection-start-column="41" selection-end-line="278" selection-end-column="41" />
+        <state relative-caret-position="901">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WiSync.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
