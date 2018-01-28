@@ -1,0 +1,1 @@
+python3.6 -w WiSync.py

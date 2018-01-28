@@ -19,7 +19,7 @@ class Button(InteractableUIElement):
         else:
             self.size = size
 
-        super().__init__(self.size, self.__idle, self.__hover, self.__click, position, on_click, on_hover, on_leave)
+        super().__init__(position, self.__idle, self.__hover, self.__click, self.size, on_click, on_hover, on_leave)
 
         self.id = Iders.btnIdler.add(self)
 

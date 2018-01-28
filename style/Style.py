@@ -12,6 +12,8 @@ class Style:
         self.border_width = border_width
         self.border_radius = border_radius
 
+
 class Styles:
     blue_button = Style(Colors.electric_blue, Colors.white, Colors.transparent, 0, 30)
     red_button = Style(Color(255, 118, 117), Colors.white, Colors.transparent, 0, 30)
+    gray_panel = Style(Colors.background_gray, Colors.transparent, Colors.transparent, 0, 30)

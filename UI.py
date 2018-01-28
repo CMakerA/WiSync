@@ -1,5 +1,8 @@
 import sys
 from UIElement import *
+from elements.Button import *
+from elements.HeaderPanel import *
+from elements.Panel import *
 
 
 class Window:
@@ -22,20 +25,21 @@ class Window:
             mouse_pos = Vector2(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])
             for element in self.elements:
                 if isinstance(element, InteractableUIElement):
-                    if element.point_over(mouse_pos):
-                        if pygame.mouse.get_pressed()[0]:
-                            if not element.justClicked:
-                                element.justClicked = True
-                                element.perform_click()
+                    if element.window is not None:
+                        if element.point_over(mouse_pos):
+                            if pygame.mouse.get_pressed()[0]:
+                                if not element.justClicked:
+                                    element.justClicked = True
+                                    element.perform_click()
+                            else:
+                                element.justClicked = False
+                                element.perform_hover()
+                                element.justHovered = True
                         else:
                             element.justClicked = False
-                            element.perform_hover()
-                            element.justHovered = True
-                    else:
-                        element.justClicked = False
-                        if element.justHovered:
-                            element.justHovered = False
-                            element.perform_leave()
+                            if element.justHovered:
+                                element.justHovered = False
+                                element.perform_leave()
 
             for element in self.elements:
                 element.draw()

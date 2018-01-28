@@ -1,13 +1,14 @@
 from UI import *
-from elements.Button import *
-from elements.HeaderPanel import *
-from elements.Panel import *
+
+
+def button1_click():
+    print("Clicked btn1")
 
 
 window = Window(Vector2(700, 500), "Wi Sync", Colors.dark_gray)
-panel = HeaderPanel(Vector2(30, 30), Vector2(200, 180), "Panel Header")
-window.add(panel)
-# button1 = Button("Button 1", Vector2(10, 10), Vector2(100, 30), print("Clicked btn 1"))
-# window.add(button1)
+panel = HeaderPanel(Position(30, 30), Size(200, 180), "Header")
+# window.add(panel)
+button1 = Button("Button 1", Position(10, 10), Size(100, 30), button1_click())
+window.add(button1)
 
 window.start()
