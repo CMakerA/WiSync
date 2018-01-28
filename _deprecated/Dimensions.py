@@ -1,4 +1,4 @@
-from Stringable import *
+from _deprecated.Stringable import *
 
 
 class Vector2(Stringable):

@@ -1,8 +1,8 @@
 import pygame
-import Font
-from style.Style import *
-from Dimensions import *
-from Printer import *
+from _deprecated import Font
+from _deprecated.style.Style import *
+from _deprecated.Dimensions import *
+from _deprecated.Printer import *
 
 
 class Drawer:
@@ -34,6 +34,9 @@ class UIElement:
                 else:
                     Drawer.draw_rect(Zone(starting_point + self.position, self.size), self.style.background_color,
                                      self.window)
+
+    def add_to(self, window: pygame.display):
+        self.window = window
 
 
 class InteractableUIElement(UIElement):
@@ -86,9 +89,10 @@ class InteractableUIElement(UIElement):
     addedPos = False
 
     def draw(self, starting_point: Vector2 = None):
-        if self.window is not None:
-            if self.size is not None:
-                Drawer.draw_rect(self.get_zone(), self.currentStyle.background_color, self.window)
+        # if self.window is not None:
+        #     if self.size is not None:
+        #         Drawer.draw_rect(self.get_zone(), self.currentStyle.background_color, self.window)
+        super().draw()
 
     def set_pos(self, new_position: Vector2):
         self.position = new_position

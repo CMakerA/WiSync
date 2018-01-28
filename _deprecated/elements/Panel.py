@@ -1,4 +1,4 @@
-from UIElement import *
+from _deprecated.elements.UIElement import *
 
 
 class Panel(UIElement):
@@ -9,9 +9,6 @@ class Panel(UIElement):
 
         self.id = Iders.panelIder.add(self)
 
-        print("Initialized Panel with id " + self.id + ", in coordinates (" + str(position.x) + ", " + str(
-            position.y) + "), with size(" + str(self.size.x) + ", " + str(self.size.y) + ")")
-
     def add(self, element: UIElement):
         if isinstance(element, InteractableUIElement):
             element.set_pos(element.position + self.position)
@@ -21,3 +18,8 @@ class Panel(UIElement):
         super().draw()
         for element in self.elements:
             element.draw(self.position)
+
+    def add_to(self, window: pygame.display):
+        super().add_to(window)
+        print("Initialized Panel with id " + self.id + ", in coordinates (" + str(self.position.x) + ", " + str(
+            self.position.y) + "), with size(" + str(self.size.x) + ", " + str(self.size.y) + ")")

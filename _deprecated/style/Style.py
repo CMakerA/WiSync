@@ -1,4 +1,4 @@
-from style.Color import *
+from _deprecated.style.Color import *
 
 
 class Style:

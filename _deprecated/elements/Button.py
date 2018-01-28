@@ -1,5 +1,5 @@
-from UIElement import *
-from style.Style import *
+from _deprecated.elements.UIElement import *
+from _deprecated.style.Style import *
 
 
 class Button(InteractableUIElement):
@@ -23,19 +23,21 @@ class Button(InteractableUIElement):
 
         self.id = Iders.btnIdler.add(self)
 
-        print("Initialized Button with id " + self.id + ", in coordinates (" + str(position.x) + ", " + str(
-            position.y) + "), with size(" + str(self.size.x) + ", " + str(self.size.y) + ")")
-
     def get_window(self):
         return self.window
+
+    def add_to(self, window: pygame.display):
+        super().add_to(window)
+        print("Initialized Button with id " + self.id + ", in coordinates (" + str(self.position.x) + ", " + str(
+            self.position.y) + "), with size(" + str(self.size.x) + ", " + str(self.size.y) + ")")
 
     def draw(self, starting_point: Vector2 = None):
         super().draw(starting_point)
         if self.window is not None:
-            if starting_point is None:
-                Drawer.draw_text(self.position + Vector2(int(self.__font_margin - (20 / 100 * self.__font_margin))),
-                                 self.text, self.window)
-            else:
-                Drawer.draw_text(starting_point + (
-                        self.position + Vector2(int(self.__font_margin - (20 / 100 * self.__font_margin)))),
-                                 self.text, self.window)
+            text_position = self.position + Vector2(int(self.__font_margin - (20 / 100 * self.__font_margin)))
+            if starting_point is not None:
+                text_position += starting_point
+
+            Drawer.draw_text(text_position, self.text, self.window)
+        else:
+            self.printer.print_once("Tried to draw " + self.id + " on a None window")
