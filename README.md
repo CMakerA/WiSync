@@ -1,12 +1,16 @@
 # WiSync
 ## Getting Started
-### 1. Install Python
+### 1. Install dependencies
+#### Windows
+Download and run the file [install_dependencies.bat](https://github.com/CMakerA/WiSync/blob/master/install_dependencies.bat) from the repo.
+#### Other
+##### 1. Install Python
 WiSync is programmed in Python 3.6, which, obviously, you have to install for running it.
 
 You can download Pytyhon from its [Official Website](https://www.python.org/)
 
 **It's very important to install Python 3.+, otherwise this won't work**
-### 2. Install Pygame
+##### 2. Install Pygame
 WiSync also makes use of the library Pygame. You can download it from the [Official Website](https://www.pygame.org/download.shtml)
 ### 3. Clone WiSync
 You must have installed in your system _git_ for running those commands, otherwise, you can just click the download button from the repo.
