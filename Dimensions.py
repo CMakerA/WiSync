@@ -13,10 +13,18 @@ class Vector2:
         return "Vector2(" + str(self.x) + ", " + str(self.y) + ")"
 
 
+class ArrayPosition(Vector2):
+    def __init__(self, value: (int, int)):
+        super().__init__(value[0], value[1])
+
+
 class Zone:
     def __init__(self, vector1: Vector2, vector2: Vector2):
         self.vector1 = vector1
         self.vector2 = vector2
+
+    def point_over(self, point: Vector2):
+        return self.vector1.x < point.x < self.vector2.x and self.vector1.y < point.y < self.vector2.y
 
     def get_vectors(self) -> (Vector2, Vector2):
         return self.vector1, self.vector2

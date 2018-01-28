@@ -13,21 +13,36 @@ import os
 class UIElement:
     window = None
 
-    def __init__(self, size: Size, position: Position, background_color: Color):
+    def __init__(self, size: Size, position: Position, background_color: Color, click_background_color: Color,
+                 hover_background_color: Color):
         self.size = size
         self.position = position
         self.zone = Zone(position, Vector2(position.x + size.x, position.y + size.y))
 
         self.background_color = background_color
+        self.click_background_color = click_background_color
+        self.hover_background_color = hover_background_color
+        self.current_color = self.background_color
 
         self.id = Iders.btnIder.add(self)
 
     def draw(self):
+        mousepos = ArrayPosition(pygame.mouse.get_pos())
+        if self.zone.point_over(mousepos):
+            if pygame.mouse.get_pressed()[0]:
+                self.current_color = self.click_background_color
+                print("Click")
+            else:
+                self.current_color = self.hover_background_color
+                print("Hover")
+        else:
+            self.current_color = self.background_color
+            print("None")
+
         if self.window is not None:
-            Drawer.draw_rect(self.zone, self.background_color, self.window)
+            Drawer.draw_rect(self.zone, self.current_color, self.window)
             Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
-                               self.size.to_string() + ". " + self.zone.to_string() + ". Background color: " +
-                               self.background_color.to_string())
+                               self.size.to_string() + ". " + self.zone.to_string())
         else:
             Printer.print_once(self.id + " has not a window to be on.")
 
@@ -45,7 +60,12 @@ class Button(UIElement):
         self.size = size
         self.position = position
 
-        super().__init__(self.size, self.position, self.__background_colors[theme.value])
+        # TODO: Click and hover colors
+        super().__init__(self.size, self.position, self.__background_colors[theme.value], Colors.flat_light_sea_blue,
+                         Colors.flat_pink)
+
+    def draw(self):
+        super().draw()
 
 
 class Window:
