@@ -4,25 +4,24 @@ echo Python already installed.
 goto installpygame
 
 :installpython
-echo Installing Python 3.6.4
+echo Installing Python3.4.3
 
-SET downloadUrl=https://www.python.org/ftp/python/3.6.4/python-3.6.4.exe
+SET downloadUrl=https://www.python.org/ftp/python/3.4.3/python-3.4.3.msi
 SET tempFile=%cd%\.%random%-tmp
 
 BITSADMIN /transfer /download %downloadUrl% %tempFile% >nul
 
 start %tempFile%
-del %tempFile%
 goto installpygame
 
 :installpygame
 echo Installing pygame
-python -m pip install pygame > null
+C:\Python34\python.exe -m pip install pygame > null
 goto installpy2exe
 
 :installpy2exe
 echo Installing py2exe
-python -m pip install py2exe > null
+C:\Python34\python.exe -m pip install py2exe > null
 goto end
 
 :end
