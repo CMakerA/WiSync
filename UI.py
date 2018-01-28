@@ -4,7 +4,10 @@ from Ider import *
 import Drawer
 import Printer
 import pygame
+import pygame.image
+from pygame.locals import *
 from enum import Enum
+import os
 
 
 class UIElement:
@@ -48,10 +51,15 @@ class Button(UIElement):
 class Window:
     running = False
 
-    def __init__(self, size: Size, title: str, background_color: Color = Colors.flat_dark_gray):
+    def __init__(self, size: Size, title: str, icon_file_name: str = None,
+                 background_color: Color = Colors.flat_dark_gray):
         self.size = size
         self.title = title
         self.background_color = background_color
+
+        if icon_file_name is not None:
+            a = pygame.image.load(os.path.join(icon_file_name))
+            pygame.display.set_icon(a)
 
         self.elements = list()
 
