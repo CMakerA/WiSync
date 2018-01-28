@@ -1,3 +1,4 @@
-import py_compile
+from distutils.core import setup
+import py2exe
 
-py_compile.compile("WiSync.py")
+setup(console=['WiSync.py'])
