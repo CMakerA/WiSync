@@ -53,7 +53,6 @@ class UIElement:
 
             mousepos = ArrayPosition(pygame.mouse.get_pos())
             if self.zone.point_over(mousepos):
-                pygame.mouse.set_cursor(*pygame.cursors.tri_left)
                 self.__left = False
                 if pygame.mouse.get_pressed()[0]:
                     self.current_color = self.click_background_color
@@ -70,7 +69,6 @@ class UIElement:
                             self.on_hover()
             else:
                 self.__hovered = False
-                pygame.mouse.set_cursor(*pygame.cursors.arrow)
                 self.current_color = self.background_color
                 if not self.__left:
                     self.__left = True
