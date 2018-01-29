@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="pygame.image.load" />
+          <option value="pygame.color.Color.get" />
         </list>
       </option>
     </inspection_tool>

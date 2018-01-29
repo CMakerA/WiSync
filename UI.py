@@ -13,8 +13,6 @@ import os
 class UIElement:
     window = None
 
-    multiple_click_wait_time = 300
-
     def __init__(self, size: Size, position: Position, background_color: Color, click_background_color: Color,
                  hover_background_color: Color):
         self.size = size
@@ -47,6 +45,7 @@ class UIElement:
         Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
                            self.size.to_string() + ". " + self.zone.to_string())
         if self.window is not None:
+            # TODO: Make drawing work
             # pygame.draw.rect(self.window, self.current_color.get(), self.zone.get())
             Drawer.draw_rect(self.zone, self.current_color, self.window)
         else:
@@ -61,14 +60,15 @@ class UIThemes(Enum):
 
 class Button(UIElement):
     __background_colors = [Colors.flat_salmon_red, Colors.flat_light_sea_blue, Colors.flat_brown]
+    __hover_background_colors = [Colors.flat_brown, Colors.flat_light_blue, Colors.flat_red]
+    __click_background_colors = [Colors.flat_salmon_red, Colors.flat_light_sea_blue, Colors.flat_brown]
 
     def __init__(self, size: Size, position: Position, theme: UIThemes):
         self.size = size
         self.position = position
 
-        # TODO: Click and hover colors
-        super().__init__(self.size, self.position, self.__background_colors[theme.value], Colors.flat_light_sea_blue,
-                         Colors.flat_pink)
+        super().__init__(self.size, self.position, self.__background_colors[theme.value],
+                         self.__hover_background_colors[theme.value], self.__click_background_colors[theme.value])
 
 
 class Window:
