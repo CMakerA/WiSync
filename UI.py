@@ -14,42 +14,72 @@ import os
 class UIElement:
     window = None
 
-    def __init__(self, size: Size, position: Position, background_color: Color, click_background_color: Color,
+    def __init__(self, prefix: str, size: Size, position: Position, background_color: Color,
+                 click_background_color: Color,
                  hover_background_color: Color):
         self.size = size
         self.position = position
-        self.zone = Zone(position, Vector2(position.x + size.x, position.y + size.y))
+        self.__update_zone()
 
         self.background_color = background_color
         self.click_background_color = click_background_color
         self.hover_background_color = hover_background_color
         self.current_color = self.background_color
 
-        self.id = Iders.btnIder.add(self)
+        self.on_click = None
+        self.on_hover = None
+        self.on_leave = None
+
+        ider = iders.ider_from_str(prefix)
+        self.id = ider.add(self)
 
     __clicked = False
+    __hovered = False
+    __left = True
 
-    def draw(self):
-        mousepos = ArrayPosition(pygame.mouse.get_pos())
-        if self.zone.point_over(mousepos):
-            pygame.mouse.set_cursor(*pygame.cursors.tri_left)
-            if pygame.mouse.get_pressed()[0]:
-                self.current_color = self.click_background_color
-                if not self.__clicked:
-                    self.__clicked = True
-                    print("Click!")
-            else:
-                self.__clicked = False
-                self.current_color = self.hover_background_color
+    new_pos = None
+
+    def __update_zone(self, position: Position = None):
+        if position is None:
+            self.zone = Zone(self.position, Vector2(self.position.x + self.size.x, self.position.y + self.size.y))
         else:
-            pygame.mouse.set_cursor(*pygame.cursors.arrow)
-            self.current_color = self.background_color
+            self.zone = Zone(position, Vector2(self.position.x + self.size.x, self.position.y + self.size.y))
 
-        Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
-                           self.size.to_string() + ". " + self.zone.to_string())
+    def draw(self, start_position: Vector2 = None):
         if self.window is not None:
-            # TODO: Make drawing work
-            # pygame.draw.rect(self.window, self.current_color.get(), self.zone.get())
+            if start_position is not None:
+                self.new_pos = start_position + self.position
+                self.__update_zone(self.new_pos)
+
+            mousepos = ArrayPosition(pygame.mouse.get_pos())
+            if self.zone.point_over(mousepos):
+                pygame.mouse.set_cursor(*pygame.cursors.tri_left)
+                self.__left = False
+                if pygame.mouse.get_pressed()[0]:
+                    self.current_color = self.click_background_color
+                    if not self.__clicked:
+                        self.__clicked = True
+                        if self.on_click is not None:
+                            self.on_click()
+                else:
+                    self.__clicked = False
+                    self.current_color = self.hover_background_color
+                    if not self.__hovered:
+                        self.__hovered = True
+                        if self.on_hover is not None:
+                            self.on_hover()
+            else:
+                self.__hovered = False
+                pygame.mouse.set_cursor(*pygame.cursors.arrow)
+                self.current_color = self.background_color
+                if not self.__left:
+                    self.__left = True
+                    if self.on_leave is not None:
+                        self.on_leave()
+
+            Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
+                               self.size.to_string() + ". " + self.zone.to_string())
+
             Drawer.draw_rect(self.zone, self.current_color, self.window)
         else:
             Printer.print_once(self.id + " has not a window to be on.")
@@ -62,10 +92,29 @@ class Label(UIElement):
         self.color = text_color
         self.font = font
 
-        super().__init__(blankVector2, self.position, Colors.transparent, Colors.transparent, Colors.transparent)
+        super().__init__("lbl", blankVector2, self.position, Colors.transparent, Colors.transparent, Colors.transparent)
 
-    def draw(self):
+    def draw(self, start_position: Vector2 = None):
         Drawer.draw_text(self.position, self.color, self.text, self.font, self.window)
+
+
+class Panel(UIElement):
+    def __init__(self, position: Position, size: Size, background_color: Color):
+        self.position = position
+        self.size = size
+
+        self.elements = list()
+
+        super().__init__("pnl", self.size, self.position, background_color, background_color, background_color)
+
+    def add(self, element: UIElement):
+        self.elements.append(element)
+
+    def draw(self, start_position: Vector2 = None):
+        super().draw(start_position)
+        for element in self.elements:
+            element.window = self.window
+            element.draw(self.position)
 
 
 class UIThemes(Enum):
@@ -87,14 +136,14 @@ class Button(UIElement):
         self.text = text
         self.font = font
 
-        super().__init__(self.size, self.position, self.__background_colors[theme.value],
+        super().__init__("btn", self.size, self.position, self.__background_colors[theme.value],
                          self.__click_background_colors[theme.value],
                          self.__hover_background_colors[theme.value])
 
-    def draw(self):
-        super().draw()
+    def draw(self, start_position: Vector2 = None):
+        super().draw(start_position)
 
-        Drawer.draw_text(self.position + Vector2(5, 5), Colors.black, self.text, self.font, self.window)
+        Drawer.draw_text(self.zone.vector1 + Vector2(5, 5), Colors.black, self.text, self.font, self.window)
 
 
 class Window:

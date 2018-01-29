@@ -17,7 +17,7 @@ class Panel(UIElement):
     def draw(self, starting_point: Vector2 = None):
         super().draw()
         for element in self.elements:
-            element.draw(self.position)
+            element.draw()
 
     def add_to(self, window: pygame.display):
         super().add_to(window)

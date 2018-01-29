@@ -6,6 +6,9 @@ class Vector2:
     def __add__(self, other):
         return Vector2(self.x + other.x, self.y + other.y)
 
+    def __sub__(self, other):
+        return Vector2(other.x - self.x, other.y - self.y)
+
     def get(self) -> (int, int):
         return self.x, self.y
 

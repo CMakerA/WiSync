@@ -29,7 +29,7 @@ class HeaderPanel(Panel):
             # Draw all content elements
             for element in self.elements:
                 element.window = self.window
-                element.draw(panel_position)
+                element.draw()
             # Draw panel header
             header_zone = Zone(self.position, self.header_size + Vector2(0, self.header_size.y))
             Drawer.draw_rect(header_zone, self.header_style.background_color, self.window)

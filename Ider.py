@@ -13,3 +13,15 @@ class Ider:
 
 class Iders:
     btnIder = Ider("btn")
+    lblIder = Ider("lbl")
+    pnlIder = Ider("pnl")
+
+    __iders = [btnIder, lblIder, pnlIder]
+
+    def ider_from_str(self, prefix: str) -> Ider:
+        for ider in self.__iders:
+            if ider.prefix is prefix:
+                return ider
+
+
+iders = Iders()
