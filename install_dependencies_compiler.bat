@@ -12,6 +12,7 @@ SET tempFile=%cd%\.%random%-tmp
 BITSADMIN /transfer /download %downloadUrl% %tempFile% >nul
 
 start %tempFile%
+del %tempFile%
 goto installpygame
 
 :installpygame

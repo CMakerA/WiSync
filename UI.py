@@ -13,6 +13,8 @@ import os
 class UIElement:
     window = None
 
+    multiple_click_wait_time = 300
+
     def __init__(self, size: Size, position: Position, background_color: Color, click_background_color: Color,
                  hover_background_color: Color):
         self.size = size
@@ -26,23 +28,27 @@ class UIElement:
 
         self.id = Iders.btnIder.add(self)
 
+    __clicked = False
+
     def draw(self):
         mousepos = ArrayPosition(pygame.mouse.get_pos())
         if self.zone.point_over(mousepos):
             if pygame.mouse.get_pressed()[0]:
                 self.current_color = self.click_background_color
-                print("Click")
+                if not self.__clicked:
+                    self.__clicked = True
+                    print("Click!")
             else:
+                self.__clicked = False
                 self.current_color = self.hover_background_color
-                print("Hover")
         else:
             self.current_color = self.background_color
-            print("None")
 
+        Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
+                           self.size.to_string() + ". " + self.zone.to_string())
         if self.window is not None:
+            # pygame.draw.rect(self.window, self.current_color.get(), self.zone.get())
             Drawer.draw_rect(self.zone, self.current_color, self.window)
-            Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
-                               self.size.to_string() + ". " + self.zone.to_string())
         else:
             Printer.print_once(self.id + " has not a window to be on.")
 
@@ -63,9 +69,6 @@ class Button(UIElement):
         # TODO: Click and hover colors
         super().__init__(self.size, self.position, self.__background_colors[theme.value], Colors.flat_light_sea_blue,
                          Colors.flat_pink)
-
-    def draw(self):
-        super().draw()
 
 
 class Window:
@@ -88,7 +91,6 @@ class Window:
         self.screen.fill(self.background_color.get())
 
     def add(self, element: UIElement):
-        element.window = self.screen
         self.elements.append(element)
 
     def __main_loop(self):
@@ -103,5 +105,7 @@ class Window:
 
     def start(self):
         self.running = True
+        for element in self.elements:
+            element.window = self.screen
         pygame.display.flip()
         self.__main_loop()
