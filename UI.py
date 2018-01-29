@@ -1,5 +1,6 @@
 from Dimensions import *
 from Color import *
+from Font import *
 from Ider import *
 import Drawer
 import Printer
@@ -31,6 +32,7 @@ class UIElement:
     def draw(self):
         mousepos = ArrayPosition(pygame.mouse.get_pos())
         if self.zone.point_over(mousepos):
+            pygame.mouse.set_cursor(*pygame.cursors.tri_left)
             if pygame.mouse.get_pressed()[0]:
                 self.current_color = self.click_background_color
                 if not self.__clicked:
@@ -40,6 +42,7 @@ class UIElement:
                 self.__clicked = False
                 self.current_color = self.hover_background_color
         else:
+            pygame.mouse.set_cursor(*pygame.cursors.arrow)
             self.current_color = self.background_color
 
         Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
@@ -52,6 +55,19 @@ class UIElement:
             Printer.print_once(self.id + " has not a window to be on.")
 
 
+class Label(UIElement):
+    def __init__(self, position: Position, text: str, text_color: Color = Colors.black, font: Font = Fonts.comic_sans):
+        self.position = position
+        self.text = text
+        self.color = text_color
+        self.font = font
+
+        super().__init__(blankVector2, self.position, Colors.transparent, Colors.transparent, Colors.transparent)
+
+    def draw(self):
+        Drawer.draw_text(self.position, self.color, self.text, self.font, self.window)
+
+
 class UIThemes(Enum):
     normal = 0
     light = 1
@@ -59,16 +75,26 @@ class UIThemes(Enum):
 
 
 class Button(UIElement):
-    __background_colors = [Colors.flat_salmon_red, Colors.flat_light_sea_blue, Colors.flat_brown]
+    __background_colors = [Colors.flat_salmon_red, Colors.flat_light_blue, Colors.flat_brown]
     __hover_background_colors = [Colors.flat_brown, Colors.flat_light_blue, Colors.flat_red]
-    __click_background_colors = [Colors.flat_salmon_red, Colors.flat_light_sea_blue, Colors.flat_brown]
+    __click_background_colors = [Colors.flat_salmon_red, Colors.flat_blue, Colors.flat_brown]
 
-    def __init__(self, size: Size, position: Position, theme: UIThemes):
+    __font = Font(Fonts.comic_sans.name, 15)
+
+    def __init__(self, size: Size, position: Position, text: str, theme: UIThemes):
         self.size = size
         self.position = position
+        self.theme = theme
+        self.text = text
 
         super().__init__(self.size, self.position, self.__background_colors[theme.value],
-                         self.__hover_background_colors[theme.value], self.__click_background_colors[theme.value])
+                         self.__click_background_colors[theme.value],
+                         self.__hover_background_colors[theme.value])
+
+    def draw(self):
+        super().draw()
+
+        Drawer.draw_text(self.position + Vector2(5, 5), Colors.black, self.text, self.__font, self.window)
 
 
 class Window:
@@ -86,6 +112,7 @@ class Window:
 
         self.elements = list()
 
+        pygame.font.init()
         self.screen = pygame.display.set_mode((self.size.width, self.size.height))
         pygame.display.set_caption(self.title)
         self.screen.fill(self.background_color.get())
@@ -102,6 +129,8 @@ class Window:
             for event in pygame.event.get():
                 if event.type is pygame.QUIT:
                     self.running = False
+
+            pygame.display.update()
 
     def start(self):
         self.running = True

@@ -13,6 +13,9 @@ class Vector2:
         return "Vector2(" + str(self.x) + ", " + str(self.y) + ")"
 
 
+blankVector2 = Vector2(0, 0)
+
+
 class ArrayPosition(Vector2):
     def __init__(self, value: (int, int)):
         super().__init__(value[0], value[1])

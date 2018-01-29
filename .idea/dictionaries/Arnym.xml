@@ -5,6 +5,7 @@
       <w>interactable</w>
       <w>mousepos</w>
       <w>stringable</w>
+      <w>textsurface</w>
     </words>
   </dictionary>
 </component>

@@ -29,6 +29,8 @@ class rgba(Color):
 
 
 class Colors:
+    transparent = Color(255, 255, 255).with_name("transparent")
+
     black = Color(0, 0, 0).with_name("black")
     white = Color(255, 255, 255).with_name("white")
     red = Color(255, 0, 0).with_name("red")
