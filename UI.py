@@ -62,7 +62,8 @@ class UIElement:
                 self.__update_zone(self.new_pos)
 
             mousepos = ArrayPosition(pygame.mouse.get_pos())
-            if self.zone.point_over(mousepos):
+            hitbox = self.zone + Zone(Vector2(0, 0), self.zone.vector2)
+            if hitbox.point_over(mousepos):
                 self.__left = False
                 if pygame.mouse.get_pressed()[0]:
                     self.current_color = self.click_background_color
@@ -215,13 +216,10 @@ class TextBox(UIElement):
                 self.__last_blink_shown = not self.__last_blink_shown
 
             Drawer.draw_text(self.zone.vector1 + Vector2(5, 5), Colors.black, self.text, self.font, self.window)
-
-            print("Focused!")
         else:
             # Drawer.draw_border_rect(self.zone, self.style.background_color, BorderStyle(
             #     self.style.border_color, self.style.border_width), self.window)
             Drawer.draw_rounded_rect(self.zone, self.style.background_color, self.window)
-            print("Unfocused!")
 
 
 class Window:

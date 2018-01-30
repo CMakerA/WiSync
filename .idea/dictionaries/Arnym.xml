@@ -3,6 +3,7 @@
     <words>
       <w>bottomleft</w>
       <w>bottomright</w>
+      <w>hitbox</w>
       <w>iders</w>
       <w>interactable</w>
       <w>mousepos</w>

@@ -1,13 +1,25 @@
 class Vector2:
-    def __init__(self, x: int, y: int):
+    def __init__(self, x: int, y: int = None):
         self.x = x
-        self.y = y
+        if y is not None:
+            self.y = y
+        else:
+            self.y = x
 
     def __add__(self, other):
-        return Vector2(self.x + other.x, self.y + other.y)
+        if isinstance(other, int) or isinstance(other, float):
+            return Vector2(self.x + int(other), self.y + int(other))
+        else:
+            return Vector2(self.x + other.x, self.y + other.y)
 
     def __sub__(self, other):
         return Vector2(other.x - self.x, other.y - self.y)
+
+    def __mul__(self, other):
+        return Vector2(other.x * self.x, other.y * self.y)
+
+    def __truediv__(self, other):
+        return Vector2(other.x / self.x, other.y / self.y)
 
     def get(self) -> (int, int):
         return self.x, self.y
@@ -25,9 +37,24 @@ class ArrayPosition(Vector2):
 
 
 class Zone:
-    def __init__(self, vector1: Vector2, vector2: Vector2):
+    def __init__(self, vector1: Vector2, vector2: Vector2 = None):
         self.vector1 = vector1
-        self.vector2 = vector2
+        if vector2 is not None:
+            self.vector2 = vector2
+        else:
+            self.vector2 = vector1
+
+    def __add__(self, other):
+        return Zone(self.vector1 + other.vector1, self.vector2 + other.vector2)
+
+    def __sub__(self, other):
+        return Zone(self.vector1 - other.vector1, self.vector2 - other.vector2)
+
+    def __mul__(self, other):
+        return Zone(self.vector1 * other.vector1, self.vector2 * other.vector2)
+
+    def __truediv__(self, other):
+        return Zone(self.vector1 / other.vector1, self.vector2 / other.vector2)
 
     def point_over(self, point: Vector2):
         return self.vector1.x < point.x < self.vector2.x and self.vector1.y < point.y < self.vector2.y
