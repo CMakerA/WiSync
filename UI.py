@@ -1,7 +1,8 @@
 from Dimensions import *
-from Color import *
+from Style import *
 from Font import *
 from Ider import *
+import Time
 import Drawer
 import Printer
 import pygame
@@ -14,9 +15,10 @@ import os
 class UIElement:
     window = None
 
-    def __init__(self, prefix: str, size: Size, position: Position, background_color: Color,
-                 click_background_color: Color,
-                 hover_background_color: Color):
+    def __init__(self, prefix: str, size: Size, position: Position, background_color: Color = Colors.white,
+                 click_background_color: Color = Colors.white,
+                 hover_background_color: Color = Colors.white,
+                 style: Style = None):
         self.size = size
         self.position = position
         self.__update_zone()
@@ -25,6 +27,7 @@ class UIElement:
         self.click_background_color = click_background_color
         self.hover_background_color = hover_background_color
         self.current_color = self.background_color
+        self.style = style
 
         self.on_click = None
         self.on_hover = None
@@ -41,9 +44,11 @@ class UIElement:
 
     def __update_zone(self, position: Position = None):
         if position is None:
-            self.zone = Zone(self.position, Vector2(self.position.x + self.size.x, self.position.y + self.size.y))
+            # self.zone = Zone(self.position, Vector2(self.position.x + self.size.x, self.position.y + self.size.y))
+            self.zone = Zone(self.position, self.size)
         else:
-            self.zone = Zone(position, Vector2(self.position.x + self.size.x, self.position.y + self.size.y))
+            # self.zone = Zone(position, Vector2(self.position.x + self.size.x, self.position.y + self.size.y))
+            self.zone = Zone(position, self.size)
 
     def draw(self, start_position: Vector2 = None):
         if self.window is not None:
@@ -142,6 +147,76 @@ class Button(UIElement):
         super().draw(start_position)
 
         Drawer.draw_text(self.zone.vector1 + Vector2(5, 5), Colors.black, self.text, self.font, self.window)
+
+
+class TextBox(UIElement):
+    __blink_time = 500  # In millis
+
+    def __init__(self, size: Size, position: Position, text: str, font: Font = Font(Fonts.comic_sans.name, 15)):
+        self.position = position
+        self.size = size
+        self.text = text
+        self.font = font
+
+        self.elements = list()
+
+        super().__init__("txt", self.size, self.position)
+
+        self.style = Styles.text_box
+
+        self.__last_blink_time = Time.millis()
+
+    def add(self, element: UIElement):
+        self.elements.append(element)
+
+    focused = False
+
+    __last_blink_shown = False
+
+    def draw(self, start_position: Vector2 = None):
+        Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
+                           self.size.to_string() + ". " + self.zone.to_string())
+
+        if pygame.mouse.get_pressed()[0]:
+            if self.zone.point_over(Vector2(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])):
+                self.focused = True
+                print("Focused!")
+            else:
+                self.focused = False
+                print("Unfocused!")
+
+        if self.focused:
+            # Drawer.draw_border_rect(self.zone, self.style.focused_background_color, BorderStyle(
+            #     self.style.focused_border_color, self.style.border_width), self.window)
+            Drawer.draw_rounded_border_rect(self.zone, self.style.focused_background_color, BorderStyle(
+                self.style.border_color, self.style.border_width), self.window)
+
+            if Time.millis() - self.__last_blink_shown > self.__blink_time:
+                if self.__last_blink_shown:
+                    # draw down line
+                    pass
+                else:
+                    # don't draw line
+                    pass
+                self.__last_blink_shown = not self.__last_blink_shown
+
+            events = pygame.event.get()
+            for event in events:
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        self.text += " "
+                    elif event.key == pygame.K_BACKSLASH:
+                        self.text = self.text[:-1]
+                    else:
+                        self.text += event.unicode
+                    print(self.id + " text is \"" + self.text + "\"")
+
+            Drawer.draw_text(self.zone.vector1 + Vector2(5, 5), Colors.black, self.text, self.font, self.window)
+        else:
+            # Drawer.draw_border_rect(self.zone, self.style.background_color, BorderStyle(
+            #     self.style.border_color, self.style.border_width), self.window)
+            Drawer.draw_rounded_border_rect(self.zone, self.style.background_color, BorderStyle(
+                self.style.border_color, self.style.border_width), self.window)
 
 
 class Window:

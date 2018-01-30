@@ -15,8 +15,9 @@ class Iders:
     btnIder = Ider("btn")
     lblIder = Ider("lbl")
     pnlIder = Ider("pnl")
+    txtIder = Ider("txt")
 
-    __iders = [btnIder, lblIder, pnlIder]
+    __iders = [btnIder, lblIder, pnlIder, txtIder]
 
     def ider_from_str(self, prefix: str) -> Ider:
         for ider in self.__iders:

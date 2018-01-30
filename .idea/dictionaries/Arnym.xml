@@ -1,11 +1,15 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Arnym">
     <words>
+      <w>bottomleft</w>
+      <w>bottomright</w>
       <w>iders</w>
       <w>interactable</w>
       <w>mousepos</w>
       <w>stringable</w>
       <w>textsurface</w>
+      <w>topleft</w>
+      <w>topright</w>
     </words>
   </dictionary>
 </component>
