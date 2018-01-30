@@ -34,6 +34,7 @@ class BorderStyle:
 
 
 class Styles:
-    text_box = Style(Colors.white, Colors.white, Colors.white, Colors.white, Colors.black, Colors.black, Colors.black,
-                     Colors.flat_blue, .5, Colors.black, Colors.black, Colors.black, Colors.black, Colors.black, 30,
-                     Colors.flat_cream_yellow)
+    text_box = Style(Colors.white, Colors.white, Colors.white, Colors.flat_cream_yellow,
+                     Colors.black, Colors.black, Colors.black, Colors.flat_blue, .5,
+                     Colors.black, Colors.black, Colors.black, Colors.black, 30,
+                     Colors.black, Colors.flat_cream_yellow)

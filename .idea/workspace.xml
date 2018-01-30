@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="096ad879-083d-4273-839c-f614d5e4a4d6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Style.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Arnym.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Arnym.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Drawer.py" afterPath="$PROJECT_DIR$/Drawer.py" />
-      <change beforePath="$PROJECT_DIR$/Ider.py" afterPath="$PROJECT_DIR$/Ider.py" />
+      <change beforePath="$PROJECT_DIR$/Style.py" afterPath="$PROJECT_DIR$/Style.py" />
       <change beforePath="$PROJECT_DIR$/UI.py" afterPath="$PROJECT_DIR$/UI.py" />
-      <change beforePath="$PROJECT_DIR$/WiSync.py" afterPath="$PROJECT_DIR$/WiSync.py" />
-      <change beforePath="$PROJECT_DIR$/dist/WiSync.exe" afterPath="$PROJECT_DIR$/dist/WiSync.exe" />
-      <change beforePath="$PROJECT_DIR$/dist/library.zip" afterPath="$PROJECT_DIR$/dist/library.zip" />
-      <change beforePath="$PROJECT_DIR$/install_dependencies_compiler.bat" afterPath="$PROJECT_DIR$/install_dependencies_compiler.bat" />
-      <change beforePath="$PROJECT_DIR$/null" afterPath="$PROJECT_DIR$/null" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,15 +30,14 @@
       <file leaf-file-name="UI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="204" column="48" lean-forward="true" selection-start-line="204" selection-start-column="48" selection-end-line="204" selection-end-column="48" />
+            <state relative-caret-position="363">
+              <caret line="245" column="8" lean-forward="false" selection-start-line="245" selection-start-column="8" selection-end-line="245" selection-end-column="8" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
-                <element signature="e#241#3200#0" expanded="false" />
-                <element signature="e#3231#3723#0" expanded="false" />
-                <element signature="e#3754#4320#0" expanded="false" />
-                <element signature="e#4349#4386#0" expanded="false" />
-                <element signature="e#4418#5415#0" expanded="false" />
+                <element signature="e#3354#3846#0" expanded="false" />
+                <element signature="e#3877#4443#0" expanded="false" />
+                <element signature="e#4472#4509#0" expanded="false" />
+                <element signature="e#4541#5538#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -56,8 +46,8 @@
       <file leaf-file-name="Style.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Style.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="37" column="116" lean-forward="false" selection-start-line="37" selection-start-column="116" selection-end-line="37" selection-end-column="116" />
+            <state relative-caret-position="448">
+              <caret line="36" column="87" lean-forward="false" selection-start-line="36" selection-start-column="87" selection-end-line="36" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -194,10 +184,10 @@
         <option value="$PROJECT_DIR$/Color.py" />
         <option value="$PROJECT_DIR$/Font.py" />
         <option value="$PROJECT_DIR$/Ider.py" />
-        <option value="$PROJECT_DIR$/Style.py" />
         <option value="$PROJECT_DIR$/Drawer.py" />
         <option value="$PROJECT_DIR$/Dimensions.py" />
         <option value="$PROJECT_DIR$/WiSync.py" />
+        <option value="$PROJECT_DIR$/Style.py" />
         <option value="$PROJECT_DIR$/UI.py" />
       </list>
     </option>
@@ -411,12 +401,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979852" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -699,22 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WiSync.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Style.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="37" column="116" lean-forward="false" selection-start-line="37" selection-start-column="116" selection-end-line="37" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Drawer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -725,17 +698,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Style.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="36" column="87" lean-forward="false" selection-start-line="36" selection-start-column="87" selection-end-line="36" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WiSync.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/UI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="204" column="48" lean-forward="true" selection-start-line="204" selection-start-column="48" selection-end-line="204" selection-end-column="48" />
+        <state relative-caret-position="363">
+          <caret line="245" column="8" lean-forward="false" selection-start-line="245" selection-start-column="8" selection-end-line="245" selection-end-column="8" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
-            <element signature="e#241#3200#0" expanded="false" />
-            <element signature="e#3231#3723#0" expanded="false" />
-            <element signature="e#3754#4320#0" expanded="false" />
-            <element signature="e#4349#4386#0" expanded="false" />
-            <element signature="e#4418#5415#0" expanded="false" />
+            <element signature="e#3354#3846#0" expanded="false" />
+            <element signature="e#3877#4443#0" expanded="false" />
+            <element signature="e#4472#4509#0" expanded="false" />
+            <element signature="e#4541#5538#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -36,11 +36,16 @@ class UIElement:
         ider = iders.ider_from_str(prefix)
         self.id = ider.add(self)
 
+        self.event_handler = None
+
     __clicked = False
     __hovered = False
     __left = True
 
     new_pos = None
+
+    def has_event_handler(self) -> bool:
+        return self.event_handler is not None
 
     def __update_zone(self, position: Position = None):
         if position is None:
@@ -166,12 +171,24 @@ class TextBox(UIElement):
 
         self.__last_blink_time = Time.millis()
 
+        self.event_handler = self.__event_handler
+
     def add(self, element: UIElement):
         self.elements.append(element)
 
     focused = False
 
     __last_blink_shown = False
+
+    def __event_handler(self, event: pygame.event):
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                self.text += " "
+            elif event.key == pygame.K_BACKSLASH:
+                self.text = self.text[:-1]
+            else:
+                self.text += event.unicode
+            print(self.id + " text is \"" + self.text + "\"")
 
     def draw(self, start_position: Vector2 = None):
         Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
@@ -180,16 +197,13 @@ class TextBox(UIElement):
         if pygame.mouse.get_pressed()[0]:
             if self.zone.point_over(Vector2(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])):
                 self.focused = True
-                print("Focused!")
             else:
                 self.focused = False
-                print("Unfocused!")
 
         if self.focused:
             # Drawer.draw_border_rect(self.zone, self.style.focused_background_color, BorderStyle(
             #     self.style.focused_border_color, self.style.border_width), self.window)
-            Drawer.draw_rounded_border_rect(self.zone, self.style.focused_background_color, BorderStyle(
-                self.style.border_color, self.style.border_width), self.window)
+            Drawer.draw_rounded_rect(self.zone, self.style.focused_background_color, self.window)
 
             if Time.millis() - self.__last_blink_shown > self.__blink_time:
                 if self.__last_blink_shown:
@@ -200,23 +214,14 @@ class TextBox(UIElement):
                     pass
                 self.__last_blink_shown = not self.__last_blink_shown
 
-            events = pygame.event.get()
-            for event in events:
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_SPACE:
-                        self.text += " "
-                    elif event.key == pygame.K_BACKSLASH:
-                        self.text = self.text[:-1]
-                    else:
-                        self.text += event.unicode
-                    print(self.id + " text is \"" + self.text + "\"")
-
             Drawer.draw_text(self.zone.vector1 + Vector2(5, 5), Colors.black, self.text, self.font, self.window)
+
+            print("Focused!")
         else:
             # Drawer.draw_border_rect(self.zone, self.style.background_color, BorderStyle(
             #     self.style.border_color, self.style.border_width), self.window)
-            Drawer.draw_rounded_border_rect(self.zone, self.style.background_color, BorderStyle(
-                self.style.border_color, self.style.border_width), self.window)
+            Drawer.draw_rounded_rect(self.zone, self.style.background_color, self.window)
+            print("Unfocused!")
 
 
 class Window:
@@ -237,6 +242,7 @@ class Window:
         pygame.font.init()
         self.screen = pygame.display.set_mode((self.size.width, self.size.height))
         pygame.display.set_caption(self.title)
+
         self.screen.fill(self.background_color.get())
 
     def add(self, element: UIElement):
@@ -249,6 +255,9 @@ class Window:
                 element.draw()
 
             for event in pygame.event.get():
+                for element in self.elements:
+                    if element.has_event_handler():
+                        element.event_handler(event)
                 if event.type is pygame.QUIT:
                     self.running = False
 
