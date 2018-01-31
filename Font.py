@@ -7,6 +7,9 @@ class Font:
         self.name = family
         self.font = pygame.font.SysFont(self.name, size)
 
+    def size(self, size: int):
+        return Font(self.name, size)
+
     def get(self) -> pygame.font:
         return self.font
 

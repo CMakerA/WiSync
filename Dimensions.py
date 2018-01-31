@@ -13,13 +13,22 @@ class Vector2:
             return Vector2(self.x + other.x, self.y + other.y)
 
     def __sub__(self, other):
-        return Vector2(other.x - self.x, other.y - self.y)
+        if isinstance(other, Vector2):
+            return Vector2(int(other.x - self.x), int(other.y - self.y))
+        else:
+            return Vector2(int(int(other) - self.x), int(int(other) - self.y))
 
     def __mul__(self, other):
-        return Vector2(other.x * self.x, other.y * self.y)
+        if isinstance(other, Vector2):
+            return Vector2(int(other.x * self.x), int(other.y * self.y))
+        else:
+            return Vector2(int(self.x * int(other)), int(self.y * int(other)))
 
     def __truediv__(self, other):
-        return Vector2(other.x / self.x, other.y / self.y)
+        if isinstance(other, Vector2):
+            return Vector2(int(other.x / self.x), int(other.y / self.y))
+        else:
+            return Vector2(int(self.x / int(other)), int(self.y / int(other)))
 
     def get(self) -> (int, int):
         return self.x, self.y
@@ -68,6 +77,10 @@ class Zone:
     def to_string(self) -> str:
         return "Zone(" + str(self.vector1.x) + ", " + str(self.vector1.y) + ", " + str(self.vector2.x) + ", " + str(
             self.vector2.y) + ")"
+
+    @staticmethod
+    def zone_correction(zone, addition: int = 0):
+        return zone + Zone(Vector2(0, 0), (zone.vector2 / 4) * 3 + addition)
 
 
 class Position(Vector2):

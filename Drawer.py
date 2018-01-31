@@ -47,15 +47,17 @@ def draw_rounded_rect(zone: Zone, color: Color, window: pygame.Surface, radius: 
 
 
 def draw_border_rect(zone: Zone, color: Color, border: BorderStyle, window: pygame.Surface):
-    draw_rect(Zone(zone.vector1 - Vector2(border.width, border.width), zone.vector2 + Vector2(
-        border.width, border.width)), border.color, window)
+    draw_rect(
+        Zone(Vector2(zone.vector1.x - border.width, zone.vector1.y - border.width),
+             Vector2(zone.vector2.x + (border.width * 2), zone.vector2.y + (border.width * 2))),
+        border.color, window)
     draw_rect(zone, color, window)
 
 
 def draw_rounded_border_rect(zone: Zone, color: Color, border: BorderStyle, window: pygame.Surface, radius: float = 0.4):
     draw_rounded_rect(
-        Zone(zone.vector1 - Vector2(border.width, border.width),
-             zone.vector2 + Vector2(border.width, border.width)),
+        Zone(Vector2(zone.vector1.x - border.width, zone.vector1.y - border.width),
+             Vector2(zone.vector2.x + (border.width*2), zone.vector2.y + (border.width*2))),
         border.color, window, radius)
     draw_rounded_rect(zone, color, window, radius)
 

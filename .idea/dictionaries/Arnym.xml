@@ -11,6 +11,8 @@
       <w>textsurface</w>
       <w>topleft</w>
       <w>topright</w>
+      <w>unclick</w>
+      <w>unfocus</w>
     </words>
   </dictionary>
 </component>
