@@ -9,6 +9,7 @@ import pygame
 import pygame.image
 from pygame.locals import *
 from enum import Enum
+import Cursors
 import os
 
 
@@ -208,10 +209,16 @@ class TextBox(UIElement):
         Printer.print_once("Initialized " + self.id + " in " + self.position.to_string() + " with size " +
                            self.size.to_string() + ". " + self.zone.to_string())
 
+        hitbox = Zone.zone_correction(self.zone, self.focused_border.width)
+
+        if hitbox.point_over(Vector2(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])):
+            pygame.mouse.set_cursor(*Cursors.text_select)
+        else:
+            pygame.mouse.set_cursor(*pygame.cursors.arrow)
+
         if pygame.mouse.get_pressed()[0]:
             if not self.wait_for_unclick:
                 self.wait_for_unclick = True
-                hitbox = Zone.zone_correction(self.zone, self.focused_border.width)
                 if hitbox.point_over(Vector2(pygame.mouse.get_pos()[0], pygame.mouse.get_pos()[1])):
                     if not self.shown_focus:
                         print("Focused " + self.id)

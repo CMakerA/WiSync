@@ -8,6 +8,7 @@
       <w>interactable</w>
       <w>mousepos</w>
       <w>stringable</w>
+      <w>textselect</w>
       <w>textsurface</w>
       <w>topleft</w>
       <w>topright</w>
