@@ -1,9 +1,9 @@
 @echo off
 if not exist "C:\Python34\python.exe" if not exist "C:\Users\Arnym\AppData\Local\Programs\Python\Python36-32\python.exe" (
-    goto installpython
+    goto addtopath
 )
 echo Python already installed.
-goto installpygame
+goto addtopath
 
 :installpython
 echo Installing Python 3.6.4
@@ -19,6 +19,10 @@ echo "ok"
 
 start %tempFile%
 del %tempFile%
+goto addtopath
+
+:addtopath
+call append_user_path.bat
 goto installpygame
 
 :installpygame
