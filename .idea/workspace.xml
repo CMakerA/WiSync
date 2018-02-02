@@ -5,9 +5,67 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="096ad879-083d-4273-839c-f614d5e4a4d6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/compile.bat" afterPath="$PROJECT_DIR$/compile.bat" />
+      <change beforePath="$PROJECT_DIR$/dist/SDL.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/SDL_image.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/SDL_mixer.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/SDL_ttf.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/WiSync.exe" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/_bz2.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/_ctypes.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/_hashlib.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/_lzma.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/_multiprocessing.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/_socket.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/_ssl.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/libfreetype-6.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/libjpeg-8.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/libmpg123-0.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/libogg-0.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/libpng16-16.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/library.zip" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/libtiff-5.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/libvorbis-0.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/libvorbisfile-3.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/libwebp-5.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pyexpat.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame._freetype.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.base.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.bufferproxy.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.cdrom.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.color.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.constants.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.display.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.draw.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.event.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.fastevent.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.font.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.image.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.imageext.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.joystick.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.key.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.mask.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.math.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.mixer.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.mixer_music.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.mouse.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.overlay.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.pixelarray.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.pixelcopy.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.rect.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.rwobject.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.scrap.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.surface.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.surflock.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.time.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/pygame.transform.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/python34.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/select.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/unicodedata.pyd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/dist/zlib1.dll" afterPath="" />
       <change beforePath="$PROJECT_DIR$/install_dependencies.bat" afterPath="$PROJECT_DIR$/install_dependencies.bat" />
       <change beforePath="$PROJECT_DIR$/null" afterPath="$PROJECT_DIR$/null" />
+      <change beforePath="$PROJECT_DIR$/setup.py" afterPath="$PROJECT_DIR$/setup.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,29 +101,31 @@
       <file leaf-file-name="install_dependencies.bat" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/install_dependencies.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="append_system_path.bat" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/append_system_path.bat">
+      <file leaf-file-name="compile.bat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compile.bat">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="255">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="append_user_path.bat" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/append_user_path.bat">
+      <file leaf-file-name="setup.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="83" lean-forward="false" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
-              <folding />
+            <state relative-caret-position="34">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,16 +167,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1360">
               <caret line="80" column="17" lean-forward="false" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Font.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Font.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -175,7 +225,6 @@
         <option value="$PROJECT_DIR$/RegistrationForm.py" />
         <option value="$PROJECT_DIR$/settings.py" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/install_dependencies_compiler.bat" />
         <option value="$PROJECT_DIR$/Time.py" />
         <option value="$PROJECT_DIR$/Color.py" />
@@ -197,6 +246,8 @@
         <option value="$PROJECT_DIR$/append_user_path.bat" />
         <option value="$PROJECT_DIR$/append_system_path.bat" />
         <option value="$PROJECT_DIR$/install_dependencies.bat" />
+        <option value="$PROJECT_DIR$/compile.bat" />
+        <option value="$PROJECT_DIR$/setup.py" />
       </list>
     </option>
   </component>
@@ -415,7 +466,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -449,13 +499,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_deprecated/Font.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="52" lean-forward="true" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pygame/__init__.py" />
     <entry file="file://$PROJECT_DIR$/_deprecated/Font.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -568,16 +611,6 @@
     <entry file="file://$PROJECT_DIR$/RegistrationForm.py" />
     <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/settings.py" />
-    <entry file="file://$PROJECT_DIR$/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#32#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Printer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -701,19 +734,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install_dependencies.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/append_system_path.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install_dependencies.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compile.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

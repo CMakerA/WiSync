@@ -19,42 +19,13 @@ echo "ok"
 
 start %tempFile%
 del %tempFile%
-goto addtopath
 
 :addtopath
 call append_user_path.bat
-goto installpygame
 
-:installpygame
 echo Installing pygame
-python -m pip install pygame > null && (
-    goto installpy2exe
-) || (
-if exist "C:\Python34\python.exe" (
-    C:\Python34\python.exe -m pip install pygame
-    goto installpy2exe
-)
-if exist "C:\Python34\python.exe" (
-    C:\Users\Arnym\AppData\Local\Programs\Python\Python36-32\python.exe -m pip install pygame
-    goto installpy2exe
-)
-)
+python -m pip install pygame
 
-:installpy2exe
 echo Installing py2exe
-python -m pip install py2exe > null && (
-    goto end
-) || (
-if exist "C:\Python34\python.exe" (
-    C:\Python34\python.exe -m pip install py2exe
-    goto end
-)
-if exist "C:\Python34\python.exe" (
-    C:\Users\Arnym\AppData\Local\Programs\Python\Python36-32\python.exe -m pip install py2exe
-    goto end
-)
-)
-
-:end
+python -m pip install py2exe
 echo Finished.
-PAUSE
