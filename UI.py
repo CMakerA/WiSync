@@ -15,6 +15,7 @@ import os
 
 class UIElement:
     window = None
+    window_class = None
 
     def __init__(self, prefix: str, size: Size, position: Position, background_color: Color = Colors.white,
                  click_background_color: Color = Colors.white,
@@ -195,10 +196,13 @@ class TextBox(UIElement):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     self.text += " "
-                elif event.key == pygame.K_BACKSLASH:
-                    self.text = self.text[:-1]
+                elif event.key == pygame.K_BACKSLASH or event.key == pygame.K_BACKSPACE or event.key == pygame.K_DELETE:
+                    text = str(self.text[:-1])
+                    self.text = text
+                    self.window_class.draw_again()
                 else:
                     self.text += event.unicode
+                self.draw()
                 print(self.id + " text is \"" + self.text + "\"")
 
     shown_focus = False
@@ -277,23 +281,32 @@ class Window:
         self.screen = pygame.display.set_mode((self.size.width, self.size.height))
         pygame.display.set_caption(self.title)
 
+        self.draw_again()
+
+    def draw_again(self):
         self.screen.fill(self.background_color.get())
+        if self.elements is not None:
+            # Draw all the elements
+            for element in self.elements:
+                print("Redrawing " + element.id)
+                if isinstance(element, TextBox):
+                    element.draw()
 
     def add(self, element: UIElement):
         self.elements.append(element)
 
     def __main_loop(self):
         while self.running:
-            # Draw all the elements
-            for element in self.elements:
-                element.draw()
-
             for event in pygame.event.get():
                 for element in self.elements:
                     if element.has_event_handler():
                         element.event_handler(event)
                 if event.type is pygame.QUIT:
                     self.running = False
+            
+            # Draw all the elements
+            for element in self.elements:
+                element.draw()
 
             pygame.display.update()
 
@@ -301,5 +314,6 @@ class Window:
         self.running = True
         for element in self.elements:
             element.window = self.screen
+            element.window_class = self
         pygame.display.flip()
         self.__main_loop()
