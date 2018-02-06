@@ -1,4 +1,8 @@
-from UI import *
+from elements.Window import *
+from elements.Button import *
+from elements.Panel import *
+from elements.Textbox import *
+from Dimensions import *
 
 window = Window(Size(1000, 700), "WiSync", "logo.png")
 
@@ -6,9 +10,9 @@ panel = Panel(Position(10, 10), Size(160, 55), Colors.flat_red)
 # window.add(panel)
 
 button = Button(Size(100, 35), Position(20, 20), "Button Light", UIThemes.light)
-# window.add(button)
+window.add(button)
 
 textbox = TextBox(Size(150, 40), Position(10, 10), "textbox")
-window.add(textbox)
+# window.add(textbox)
 
 window.start()
