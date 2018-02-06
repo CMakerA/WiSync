@@ -1,8 +1,6 @@
-from elements.Window import *
-from elements.Button import *
-from elements.Panel import *
-from elements.Textbox import *
+from elements import *
 from Dimensions import *
+from Color import *
 
 window = Window(Size(1000, 700), "WiSync", "logo.png")
 

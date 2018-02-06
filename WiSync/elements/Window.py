@@ -12,7 +12,7 @@ from enum import Enum
 import Cursors
 import os
 from elements.UIElement import *
-from elements.Textbox import *
+from elements.TextBox import *
 
 class Window:
     running = False
