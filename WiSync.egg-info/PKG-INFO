@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: WiSync
+Version: 1.0.0.dev1
+Summary: You favorite home automation platform.
+Home-page: https://github.com/CMakerA/WiSync
+Author: ArnyminerZ
+Author-email: arnyminer.z@gmail.com
+License: MIT
+Description-Content-Type: UNKNOWN
+Description: # WiSync
+        Go to [Releases](https://github.com/CMakerA/WiSync/releases) and download the last for your device.
+        
+Platform: UNKNOWN
+Requires-Python: >=3
