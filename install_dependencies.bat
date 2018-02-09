@@ -1,4 +1,7 @@
 @echo off
+WHERE git
+IF %ERRORLEVEL% NEQ 0 ECHO Git is required for cloning the repository. If you don't install it, the clone.bat file won't work. 
+
 if not exist "C:\Python34\python.exe" if not exist "C:\Users\Arnym\AppData\Local\Programs\Python\Python36-32\python.exe" (
     goto addtopath
 )
